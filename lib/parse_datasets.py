@@ -72,7 +72,7 @@ def parse_datasets(args, device):
 			end_ind = start_ind + n_reduced_tp
 			sliced = []
 			for i in range(n_traj):
-				  sliced.append(dataset[i, start_ind[i] : end_ind[i], :])
+				sliced.append(dataset[i, start_ind[i] : end_ind[i], :])
 			dataset = torch.stack(sliced).to(device)
 			time_steps = time_steps[:n_reduced_tp]
 

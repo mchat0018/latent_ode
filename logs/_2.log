@@ -1,0 +1,7 @@
+c:\Mihir\Ashoka RAship\ESIMC Datathon\Code\Trajectory\latent_ode
+Run_2
+Experiment 2
+Epoch 0005 [Test seq (cond on sampled tp)] | Loss 309.338898 | Likelihood -310.437531 | KL fp 5.4295 | FP STD 0.0169|
+KL coef: 0
+Train loss (one batch): 310.05780029296875
+Test MSE: 0.0628

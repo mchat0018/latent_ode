@@ -1,0 +1,6 @@
+rnn-venv
+*.pyc
+*.npy
+*.ckpt
+*.pth
+*.pt

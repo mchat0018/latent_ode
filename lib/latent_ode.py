@@ -57,7 +57,7 @@ class LatentODE(VAE_Baseline):
 			truth_w_mask = truth
 			if mask is not None:
 				truth_w_mask = torch.cat((truth, mask), -1)
-			first_point_mu, first_point_std = self.encoder_z0(
+			first_point_mu, first_point_std, enc_latent_states = self.encoder_z0(
 				truth_w_mask, truth_time_steps, run_backwards = run_backwards)
 
 			means_z0 = first_point_mu.repeat(n_traj_samples, 1, 1)
@@ -111,8 +111,8 @@ class LatentODE(VAE_Baseline):
 			else:
 				all_extra_info["label_predictions"] = self.classifier(first_point_enc).squeeze(-1)
 
-		return pred_x, all_extra_info
-
+		return pred_x, sol_y, all_extra_info
+	
 
 	def sample_traj_from_prior(self, time_steps_to_predict, n_traj_samples = 1):
 		# input_dim = starting_point.size()[-1]
